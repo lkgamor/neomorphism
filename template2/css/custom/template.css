@@ -1,0 +1,183 @@
+:root {
+    --background: #e6e6e9;
+    --purple-color: rgb(108, 89, 218);
+    --pink-color: rgb(226, 79, 170);
+    --light-color: #d6d3d3;
+    --light-gray-color: #c2c2c2;
+    --light-blue-color: #c8e3f0;
+    --menu-card-size: 120px;
+    --transition-duration: 400ms;
+}
+
+*, 
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {    
+    font-size: .875rem;
+    background-color: var(--background)!important;
+}
+
+section {
+    display: flex!important;
+    height: 100vh;
+    position: relative;
+}
+
+aside {
+    flex: .75;
+    margin: 1rem 0 1rem 1rem;
+    border-radius: 1rem;
+    background: var(--light-blue-color);
+}
+
+main {
+    flex: 2;
+}
+
+.text--purple {
+    color: var(--purple-color);
+}
+
+.text--gray {
+    color: var(--light-gray-color);
+}
+
+.text--pink {
+    color: var(--pink-color);
+}
+
+.hero {
+    width: 90%;
+    height: 90%;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.hero__header {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.hero__header--left {
+    background: brown;
+}
+
+.hero__header--right {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.neo__button--round {
+    cursor: pointer;
+    outline: none;
+    border: none !important;
+    transition: var(--transition-duration);
+    border-radius: 3rem !important;
+    box-shadow: 
+        -7px -7px 15px rgba(255, 255, 255, .4),
+        7px 7px 15px rgba(70, 70, 70, .25);
+}
+
+.neo__button--round:hover,
+.neo__button--round:focus {
+    color: var(--light-gray-color);
+    background: var(--background)!important;   
+    box-shadow: 
+        1px 1px 15px rgba(255, 255, 255, .2), 
+        7px 7px 15px rgb(70 70 70 / 12%), 
+        inset -2px -2px 2px rgba(255, 255, 255, .5), 
+        inset 2px 0px 8px 4px rgb(70 70 70 / 22%);
+}
+
+.hero__header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.neo__search-field {
+    color: var(--light-gray-color);
+    border-radius: 2rem !important;
+    border: none !important;
+    background: var(--background)!important;
+    box-shadow: 
+    1px 1px 15px rgba(255, 255, 255, .2), 
+    7px 7px 15px rgb(70 70 70 / 12%), 
+    inset -2px -2px 2px rgba(255, 255, 255, .5), 
+    inset 2px 0px 8px 4px rgb(70 70 70 / 22%);
+}
+
+.neo__search-icon {
+    color: var(--light-gray-color);
+    position: absolute;
+    right: 1rem;
+}
+
+.neo__button-menu {
+    cursor: pointer;
+    outline: none;
+    margin-left: 3rem;
+    border: none !important;
+    color: var(--light-gray-color);
+    background: var(--background);
+    box-shadow: 
+        -7px -7px 15px rgba(255, 255, 255, .4),
+        7px 7px 15px rgba(70, 70, 70, .25);
+    transition: var(--transition-duration);
+}
+
+.hero__body {
+    height: 90%;
+    display: flex;
+}
+
+.hero__header--left,
+.hero__body--left {
+    flex: 1;
+}
+
+.hero__header--right,
+.hero__body--right {
+    flex: 2;
+}
+
+.neo-card {
+    display: flex;
+    outline: none;
+    height: 100%;
+    padding: 1.5rem 1rem;
+    justify-content: space-evenly;
+    background: var(--background);
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 
+        -7px -7px 15px rgba(255, 255, 255, .4),
+        7px 7px 15px rgba(70, 70, 70, .25);
+}
+
+.neo-card .neo__button--round {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+}
+
+.neo-card__inner {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    margin: auto;
+    background: var(--purple-color);
+}

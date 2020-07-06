@@ -1,0 +1,176 @@
+:root {
+    --background: rgb(214, 227, 247);
+    --purple-color: rgb(85, 63, 211);
+    --light-color: #d6d3d3;
+    --menu-card-size: 120px;
+    --transition-duration: 300ms;
+}
+*, 
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {    
+    font-size: .875rem;
+    background-color: var(--background)!important;
+}
+
+section {
+    margin: auto;
+    border: none;
+    top: 0;
+    bottom: 0;
+    padding: 0 35%;
+    height: 100vh;
+    display: flex!important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.neo-card {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: var(--background)!important;
+}
+
+.neo-card__main {
+    display: flex;
+    outline: none;
+    padding: 1.5rem 1rem;
+    justify-content: space-evenly;
+    border-radius: .3rem;
+    box-shadow: 
+        -7px -7px 15px rgba(255, 255, 255, .4),
+        7px 7px 15px rgba(70, 70, 70, .25);
+}
+
+.neo-card__body {
+    height: var(--menu-card-size);
+    width: var(--menu-card-size);
+    border-radius: .3rem;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-duration);
+}
+
+.neo-card__body:hover,
+.neo-card__body:focus {
+    box-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, .4), 
+        6px 6px 15px rgba(70, 70, 70, .25);
+}
+
+.neo-card__body:hover .neo-card__body--icon,
+.neo-card__body:focus .neo-card__body--icon {
+    box-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, .4), 
+        6px 6px 15px rgba(70, 70, 70, .25);
+}
+
+.neo-card__body:hover .neo-card__body--name,
+.neo-card__body:focus .neo-card__body--name {
+    text-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, .4), 
+        6px 6px 15px rgba(70, 70, 70, .25);
+}
+
+.neo-card__body--name{
+    font-weight: 600;
+}
+
+.neo-card__body--icon {
+    height: calc(var(--menu-card-size)/2);
+    width: calc(var(--menu-card-size)/2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    transition: var(--transition-duration);
+}
+
+.neo-card__body--icon.credit-card {
+    background: rgb(165, 55, 73);
+}
+
+.neo-card__body--icon.gift-card {
+    background: rgb(214, 111, 14);
+}
+
+.neo-card__body--icon.shopping-cart {
+    background: var(--purple-color);
+}
+
+.neo-card__body--name {
+    margin-top: 1rem;
+    font-variant: all-small-caps;
+    transition: var(--transition-duration);
+}
+
+.neo-card__sub {
+    border: none;
+    border-radius: .3rem;
+    padding: 1rem;
+    outline: none;
+    text-align: center;
+    background-color: rgba(123, 136, 212, 0.25);
+    box-shadow: 
+        6px 11px 15px rgba(255, 255, 255, .5), 
+        7px 7px 15px rgba(70, 70, 70, .25), 
+        inset 1px 0px 1px rgba(255, 255, 255, .5), 
+        inset 3px 1px 5px rgba(70, 70, 70, .25);
+}
+
+.neo-car__sub--text {
+    font-weight: 500;
+}
+
+.neo-car__sub--text a {
+    font-weight: 500;
+    color: var(--purple-color);
+}
+
+.neo-car__sub--text a:hover {
+    color: var(--purple-color);
+}
+
+.neo-card__footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.neo-card__footer--button {
+    width: 45%;
+    cursor: pointer;
+    outline: none;
+    border: 5px solid var(--background);
+    font-weight: 500 !important;
+    padding: 0.75rem !important;
+    border-radius: 2rem !important;
+    box-shadow: 
+        -5px -5px 10px rgba(255, 255, 255, .4), 
+        6px 6px 15px rgba(70, 70, 70, .25);
+    transition: var(--transition-duration);
+}
+
+.neo-card__footer--button:hover,
+.neo-card__footer--button:focus {
+    transform: scale(1.015);
+}
+
+.neo-card__footer--button:first-of-type {
+    background: var(--purple-color);
+    color: var(--light-color);
+}
+
+.neo-card__footer--button:last-of-type {
+    background: var(--background);
+    color: var(--purple-color);
+}
