@@ -1,10 +1,28 @@
 :root {
-    --background: #e6e6e9;
+    /*LIGHT THEME*/
+    --background-light: #e6e6e9;
+
+    --neo-shadow-light:rgba(255, 255, 255, .4);
+    --neo-shadow-inset-light: rgba(70, 70, 70, .22);
+
+    --side-card-light: #9dd5f1;
+    
+
+    /*DARK THEME*/
+    --background-dark: #0a0a1b;
+
+    --neo-shadow-dark: rgba(0, 0, 0, .4);
+    --neo-shadow-inset-dark: rgba(0, 0, 0, .22);
+
+    --side-card-dark: var(--purple-color);
+
+
+    /*GENERAL COLORS*/
     --purple-color: rgb(108, 89, 218);
     --pink-color: rgb(226, 79, 170);
     --light-color: #d6d3d3;
     --light-gray-color: #807d7d;
-    --light-blue-color: #c8e3f0;
+
     --button-height: 35px;
     --menu-card-size: 120px;
     --transition-duration: 400ms;
@@ -16,10 +34,15 @@
     box-sizing: border-box;
 }
 
+::selection {
+    color: black;
+    background: rgba(108, 89, 218, .5);
+}
+
 body {    
     font-size: .875rem;
     font-family: 'Hind', sans-serif !important;
-    background-color: var(--background) !important;
+    background-color: var(--background-light) !important;
 }
 
 section {
@@ -32,7 +55,7 @@ aside {
     flex: .75;
     margin: 1rem 0 1rem 1rem;
     border-radius: 1rem;
-    background: var(--light-blue-color);
+    background: var(--side-card-light);
 }
 
 main {
@@ -87,22 +110,22 @@ main {
     cursor: pointer;
     outline: none;
     border: none !important;
-    transition: var(--transition-duration);
+    background: var(--background-light)!important; 
     border-radius: 3rem !important;
     box-shadow: 
-        -7px -7px 15px rgba(255, 255, 255, .4),
-        7px 7px 15px rgba(70, 70, 70, .25);
+        -7px -7px 15px var(--neo-shadow-light),
+        7px 7px 15px var(--neo-shadow-inset-light);
+    transition: var(--transition-duration);
 }
 
 .neo__button--round:hover,
 .neo__button--round:focus {
-    color: var(--light-gray-color);
-    background: var(--background)!important;   
+    color: var(--light-gray-color);      
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
-        7px 7px 15px rgb(70 70 70 / 12%), 
-        inset -2px -2px 2px rgba(255, 255, 255, .5), 
-        inset 2px 0px 8px 4px rgb(70 70 70 / 22%) !important;
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light) !important;
 }
 
 .hero__header-navigation {
@@ -119,18 +142,19 @@ main {
 .hero__header-menu {
     width: 20%;
     display: flex;
+    align-items: center;
 }
 
 .neo__search-field {
     color: var(--light-gray-color);
     border-radius: 2rem !important;
     border: none !important;
-    background: var(--background)!important;
+    background: var(--background-light)!important;
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
-        7px 7px 15px rgb(70 70 70 / 12%), 
-        inset -2px -2px 2px rgba(255, 255, 255, .5), 
-        inset 2px 0px 8px 4px rgb(70 70 70 / 22%);
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light);
 }
 
 .neo__search-icon {
@@ -144,10 +168,10 @@ main {
     outline: none;
     border: none !important;
     color: var(--light-gray-color);
-    background: var(--background);
+    background: var(--background-light);
     box-shadow: 
-        -7px -7px 15px rgba(255, 255, 255, .4),
-        7px 7px 15px rgba(70, 70, 70, .25);
+        -7px -7px 15px var(--neo-shadow-light),
+        7px 7px 15px var(--neo-shadow-inset-light);
     transition: var(--transition-duration);
 }
 
@@ -253,12 +277,12 @@ main {
     height: 100%;
     padding: 1.5rem 1rem;
     justify-content: space-evenly;
-    background: var(--background);
+    background: var(--background-light);
     position: relative;
     border-radius: 1rem;
     box-shadow: 
-        -7px -7px 15px rgba(255, 255, 255, .4),
-        7px 7px 15px rgba(70, 70, 70, .25);
+        -7px -7px 15px var(--neo-shadow-light),
+        7px 7px 15px var(--neo-shadow-inset-light);
 }
 
 .neo-card .neo__button--round {
@@ -294,10 +318,10 @@ main {
     justify-content: center;
     align-items: center;
     color: var(--purple-color);
-    background: var(--background);
+    background: var(--background-light);
     box-shadow: 
-        -7px -7px 15px rgba(255, 255, 255, .4),
-        7px 7px 15px rgba(70, 70, 70, .25);
+        -7px -7px 15px var(--neo-shadow-light),
+        7px 7px 15px var(--neo-shadow-inset-light);
     transition: var(--transition-duration);
 }
 
@@ -305,12 +329,12 @@ main {
 .hero__body-header .neo__menu-item:focus {
     outline: none;
     color: var(--purple-color);
-    background: var(--background);
+    background: var(--background-light);
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
-        7px 7px 15px rgb(70 70 70 / 12%), 
-        inset -2px -2px 2px rgba(255, 255, 255, .5), 
-        inset 2px 0px 8px 4px rgb(70 70 70 / 22%) !important;
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light) !important;
 }
 
 .hero__body-main,
@@ -354,12 +378,12 @@ main {
     height: 10px;
     border-radius: 3rem;
     position: relative;
-    background: var(--background);
+    background: var(--background-light);
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
-        7px 7px 15px rgb(70 70 70 / 12%), 
-        inset -2px -2px 2px rgba(255, 255, 255, .5), 
-        inset 2px 0px 8px 4px rgb(70 70 70 / 22%) !important;
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light) !important;
 }
 
 .stats__indicator::before {
@@ -368,7 +392,7 @@ main {
     position: absolute;
     border-radius: 3rem;
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
+        1px 1px 15px var(--neo-shadow-light), 
         1px 1px 5px 0px limegreen;
 }
 
@@ -376,7 +400,7 @@ main {
     width: 90%;
     background: limegreen;
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
+        1px 1px 15px var(--neo-shadow-light), 
         1px 1px 5px 0px limegreen;
 }
 
@@ -384,7 +408,7 @@ main {
     width: 60%;
     background: orange;
     box-shadow: 
-        1px 1px 15px rgba(255, 255, 255, .2), 
+        1px 1px 15px var(--neo-shadow-light), 
         1px 1px 5px 0px orange;
 }
 
@@ -394,14 +418,14 @@ main {
 }
 
 .neo__menu-item:hover {
-    color: var(--background);
+    color: var(--background-light);
     background: var(--purple-color);
 }
 
 .neo__menu-item:hover + .neo__menu-item {
     box-shadow: 
         -7px -7px 15px rgba(255, 255, 255, 0), 
-        7px 7px 15px rgba(70, 70, 70, .25)!important;
+        7px 7px 15px var(--neo-shadow-inset-light)!important;
 }
 
 .neo__menu-item:hover .hero__money-button--icon {
