@@ -1,11 +1,11 @@
 :root {
     /*LIGHT THEME*/
-    --background-light: #d1d1eb;
+    --background-light: #dfdfea;
 
     --neo-shadow-light:rgba(255, 255, 255, .4);
     --neo-shadow-inset-light: rgba(70, 70, 70, .22);
 
-    --side-card-light: #9dd5f1;
+    --side-card-light: #9dd5f1; 
     
 
     /*DARK THEME*/
@@ -40,7 +40,6 @@
 }
 
 body {    
-    margin: 0;
     padding: 0;
     font-size: .875rem;
     font-family: 'Hind', sans-serif !important;
@@ -53,16 +52,37 @@ section {
     display: flex!important;
 }
 
-aside {
-    flex: .6;
-    padding: 3rem 2rem 2rem;
-    margin: 2rem 2rem 2rem 0;
+.aside--left {
+    flex: .08;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+    background: var(--background-light);
+}
+
+.aside--left .nav-items {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aside--right {
+    width: 27%;
+    height: 90%;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    margin: 2rem 2rem 2rem auto;
     border-radius: 2rem;
-    background: var(--side-card-light);
 }
 
 main {
-    flex: 2;
+    flex: .92;
+    border-top-left-radius: 5rem;
 }
 
 .text--purple {
@@ -82,7 +102,7 @@ main {
 }
 
 .neo__inset,
-.watchlist__preference .watchlist__checkbox::before {
+.watchlist__checkbox {
     border: none !important;
     background: var(--background-light)!important;
     box-shadow: 
@@ -93,13 +113,40 @@ main {
 }
 
 .neo__outset,
-.neo__button--round,
-.watchlist__preference .watchlist__checkbox::after {
+.watchlist__checkbox::before {
     border: none !important;
     background: var(--background-light)!important; 
     box-shadow: 
         -7px -7px 15px var(--neo-shadow-light),
         7px 7px 15px var(--neo-shadow-inset-light);
+}
+
+.neo__button {
+    cursor: pointer;    
+    outline: none !important;
+    padding: unset !important;
+    font-size: 2rem !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem !important;
+    width: calc(var(--button-height) * 2);
+    height: calc(var(--button-height) * 2);
+    border: 4px solid var(--background-light)!important; 
+    transition: var(--transition-duration);
+}
+
+.neo__button:hover,
+.neo__button:focus {
+    box-shadow: 
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light)!important; 
+}
+
+.neo__button + .neo__button {
+    margin-top: 1.5rem;
 }
 
 .neo__button--round {
@@ -126,6 +173,11 @@ main {
 }
 
 .watchlist__header,
+.watchlist__body {
+    padding: 0 2rem;
+}
+
+.watchlist__header,
 .watchlist__body-title {
     display: flex;
     justify-content: space-between;
@@ -136,7 +188,27 @@ main {
 }
 
 .watchlist__body {
-    
+    background: transparent !important;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    height: 98%;
+}
+
+.watchlist__body::-webkit-scrollbar {
+	height: 0.5em;
+	width: 0;
+	transition: all 500ms ease;
+}
+
+.watchlist__body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.watchlist__body::-webkit-scrollbar-thumb {
+    background: var(--background-light); 
+	outline: 1px solid var(--background-light);
+	cursor: pointer;
 }
 
 .watchlist__body-title {
@@ -204,34 +276,42 @@ main {
     position: relative;
 }
 
-.watchlist__checkbox,
-.watchlist__checkbox::before {
+.watchlist__checkbox {
     width: calc(var(--button-height) * 2);
-    height:var(--button-height);
+    height: var(--button-height);
     outline: none !important;
-    cursor: pointer;
+    border-radius: .5rem;
     appearance: none;
 }
 
-.watchlist__checkbox::before,
-.watchlist__checkbox::after {
-    content: "";
-    border-radius: .5rem;
-    position: absolute;
-}
-
-.watchlist__checkbox::after {
-    left: 0;    
+.watchlist__checkbox::before {
     width: var(--button-height);
-    height: inherit;
+    height: var(--button-height);
+    border-radius: .5rem;
+    cursor: pointer;
+    appearance: none;
+    content: "OFF";
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .75rem;
+    color: var(--light-gray-color);
     transition: var(--transition-duration);
 }
 
-.watchlist__checkbox:checked::before{
+.watchlist__checkbox:checked {
     background: yellowgreen !important;
 }
 
-.watchlist__checkbox:checked::after{
+.watchlist__checkbox:checked::before{
+    color: var(--purple-color);
+    font-weight: bold;
+    content: "ON";
+    left: unset;
     right: 0;
-    left: unset !important;
 }
