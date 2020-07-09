@@ -330,6 +330,7 @@ main {
     outline: none;
     color: var(--purple-color);
     background: var(--background-light);
+    font-weight: 600;
     box-shadow: 
         1px 1px 15px var(--neo-shadow-light), 
         7px 7px 15px var(--neo-shadow-inset-light), 
@@ -353,10 +354,6 @@ main {
 
 .hero__body-main--right {
     flex: 1;
-}
-
-.hero__stats {
-
 }
 
 .stats__header {

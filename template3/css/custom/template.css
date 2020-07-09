@@ -1,0 +1,237 @@
+:root {
+    /*LIGHT THEME*/
+    --background-light: #d1d1eb;
+
+    --neo-shadow-light:rgba(255, 255, 255, .4);
+    --neo-shadow-inset-light: rgba(70, 70, 70, .22);
+
+    --side-card-light: #9dd5f1;
+    
+
+    /*DARK THEME*/
+    --background-dark: #0a0a1b;
+
+    --neo-shadow-dark: rgba(0, 0, 0, .4);
+    --neo-shadow-inset-dark: rgba(0, 0, 0, .22);
+
+    --side-card-dark: var(--purple-color);
+
+
+    /*GENERAL COLORS*/
+    --purple-color: rgb(42, 33, 94);
+    --pink-color: rgb(226, 79, 170);
+    --light-color: #b8aeae;
+    --light-gray-color: #807d7d;
+
+    --button-height: 35px;
+    --menu-card-size: 120px;
+    --transition-duration: 400ms;
+}
+
+*, 
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    color: black;
+    background: rgba(108, 89, 218, .5);
+}
+
+body {    
+    margin: 0;
+    padding: 0;
+    font-size: .875rem;
+    font-family: 'Hind', sans-serif !important;
+    background-color: var(--background-light) !important;
+}
+
+section {
+    height: 100vh;
+    position: relative;
+    display: flex!important;
+}
+
+aside {
+    flex: .6;
+    padding: 3rem 2rem 2rem;
+    margin: 2rem 2rem 2rem 0;
+    border-radius: 2rem;
+    background: var(--side-card-light);
+}
+
+main {
+    flex: 2;
+}
+
+.text--purple {
+    color: var(--purple-color);
+}
+
+.text--gray {
+    color: var(--light-gray-color);
+}
+
+.text--lightgray {
+    color: var(--light-color);
+}
+
+.text--pink {
+    color: var(--pink-color);
+}
+
+.neo__inset,
+.watchlist__preference .watchlist__checkbox::before {
+    border: none !important;
+    background: var(--background-light)!important;
+    box-shadow: 
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light);
+}
+
+.neo__outset,
+.neo__button--round,
+.watchlist__preference .watchlist__checkbox::after {
+    border: none !important;
+    background: var(--background-light)!important; 
+    box-shadow: 
+        -7px -7px 15px var(--neo-shadow-light),
+        7px 7px 15px var(--neo-shadow-inset-light);
+}
+
+.neo__button--round {
+    outline: none;
+    cursor: pointer;    
+    padding: unset !important;
+    width: var(--button-height);
+    height: var(--button-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem !important;
+    transition: var(--transition-duration);
+}
+
+.neo__button--round:hover,
+.neo__button--round:focus {
+    color: var(--light-gray-color);      
+    box-shadow: 
+        1px 1px 15px var(--neo-shadow-light), 
+        7px 7px 15px var(--neo-shadow-inset-light), 
+        inset -2px -2px 2px var(--neo-shadow-light), 
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light) !important;
+}
+
+.watchlist__header,
+.watchlist__body-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.watchlist__header-title {
+    font-weight: 500;
+}
+
+.watchlist__body {
+    
+}
+
+.watchlist__body-title {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.watchlist__content,
+.watchlist__card > div {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.watchlist__card {
+    padding: .5rem;
+    width: 100%;
+    height: calc(var(--button-height) * 2);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 1rem;
+    box-shadow: 
+        -7px -7px 15px var(--neo-shadow-light),
+        7px 7px 15px var(--neo-shadow-inset-light);
+    transition: var(--transition-duration);
+}
+
+.watchlist__card + .watchlist__card {
+    margin-top: 2rem;
+}
+
+.watchlist__logo {
+    padding: .5rem;
+    grid-column: 1/2;
+    width: 100%;
+}
+
+.watchlist__logo img {
+    width: inherit;
+}
+
+.watchlist__name {
+    grid-column: 2/3;
+}
+
+.watchlist__name .abrev {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.watchlist__name .price {
+    font-size: .75rem;
+}
+
+.watchlist__rating {
+    flex-direction: row !important;
+    font-size: .85rem;
+    grid-column: 3/4;
+}
+
+.watchlist__preference {
+    grid-column: 4/5;
+    padding: .5rem;
+    position: relative;
+}
+
+.watchlist__checkbox,
+.watchlist__checkbox::before {
+    width: calc(var(--button-height) * 2);
+    height:var(--button-height);
+    outline: none !important;
+    cursor: pointer;
+    appearance: none;
+}
+
+.watchlist__checkbox::before,
+.watchlist__checkbox::after {
+    content: "";
+    border-radius: .5rem;
+    position: absolute;
+}
+
+.watchlist__checkbox::after {
+    left: 0;    
+    width: var(--button-height);
+    height: inherit;
+    transition: var(--transition-duration);
+}
+
+.watchlist__checkbox:checked::before{
+    background: yellowgreen !important;
+}
+
+.watchlist__checkbox:checked::after{
+    right: 0;
+    left: unset !important;
+}
