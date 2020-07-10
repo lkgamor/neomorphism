@@ -23,7 +23,7 @@
     --light-color: #b8aeae;
     --light-gray-color: #807d7d;
 
-    --button-height: 35px;
+    --button-height: 30px;
     --menu-card-size: 120px;
     --transition-duration: 400ms;
 }
@@ -72,7 +72,7 @@ section {
 }
 
 .aside--right {
-    width: 27%;
+    width: 40%;
     height: 90%;
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -82,7 +82,12 @@ section {
 
 main {
     flex: .92;
+    display: flex !important;
     border-top-left-radius: 5rem;
+}
+
+.bg--purple {
+    background: var(--purple-color);
 }
 
 .text--purple {
@@ -143,6 +148,11 @@ main {
         7px 7px 15px var(--neo-shadow-inset-light), 
         inset -2px -2px 2px var(--neo-shadow-light), 
         inset 2px 0px 8px 4px var(--neo-shadow-inset-light)!important; 
+}
+
+.neo__button:hover i,
+.neo__button:focus i {
+    color: var(--purple-color);
 }
 
 .neo__button + .neo__button {
@@ -260,6 +270,7 @@ main {
     font-weight: bold;
 }
 
+.user__email,
 .watchlist__name .price {
     font-size: .75rem;
 }
@@ -314,4 +325,40 @@ main {
     content: "ON";
     left: unset;
     right: 0;
+}
+
+.main-content {
+    width: 100%;
+    margin: 0 3rem;
+}
+
+.dashboard__header {
+    display: flex;
+    width: inherit;
+    padding: 2rem 3rem;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    justify-content: space-between;
+}
+
+.user__card {
+    padding: .5rem;
+    width: 40%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 1rem;
+}
+
+.user__card-item + .user__card-item {
+    margin-left: .7rem;
+}
+
+.user__image {    
+    width: var(--button-height);
+    height: var(--button-height);
+}
+
+.user__image img {
+    width: 100%;
 }
