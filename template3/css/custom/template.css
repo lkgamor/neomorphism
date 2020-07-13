@@ -114,16 +114,18 @@ main {
         1px 1px 15px var(--neo-shadow-light), 
         7px 7px 15px var(--neo-shadow-inset-light), 
         inset -2px -2px 2px var(--neo-shadow-light), 
-        inset 2px 0px 8px 4px var(--neo-shadow-inset-light);
+        inset 2px 0px 8px 4px var(--neo-shadow-inset-light) !important;
 }
 
 .neo__outset,
-.watchlist__checkbox::before {
+.watchlist__checkbox::before,
+.dashboard__period-button:hover,
+.dashboard__period-button:focus {
     border: none !important;
     background: var(--background-light)!important; 
     box-shadow: 
         -7px -7px 15px var(--neo-shadow-light),
-        7px 7px 15px var(--neo-shadow-inset-light);
+        7px 7px 15px var(--neo-shadow-inset-light) !important;
 }
 
 .neo__button {
@@ -326,23 +328,9 @@ main {
     right: 0;
 }
 
-.main-content {
-    width: 100%;
-    margin: 0 3rem;
-}
-
-.dashboard__header {
-    display: flex;
-    width: inherit;
-    padding: 2rem 3rem;
-    align-items: center;
-    border-bottom: 1px solid gray;
-    justify-content: space-between;
-}
-
 .user__card {
-    padding: .5rem;
     width: 40%;
+    height: calc(var(--button-height) * 2);
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
@@ -355,9 +343,92 @@ main {
 
 .user__image {    
     width: var(--button-height);
-    height: var(--button-height);
+    height: inherit;
 }
 
 .user__image img {
+    height: inherit;
+    border-radius: .5rem;
+}
+
+.main-content {
     width: 100%;
+    margin: 0 4rem;
+    padding: 2rem 0;
+}
+
+.dashboard__header {
+    display: flex;
+    width: inherit;
+    padding: 2rem 0;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    justify-content: space-between;
+}
+
+.dashboard__body {
+    display: grid;
+    grid-template-rows: calc(var(--button-height) * 2) calc(var(--button-height) * 8) auto;
+}
+
+.dashboard__top {
+    display: flex;
+    margin-top: 9%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard__middle {
+    
+}
+
+.dashboard__bottom {
+    
+}
+
+.dashboard__top--left {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+}
+
+.dashboard__top--right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard__price--main {
+    font-size: 2.5rem;
+}
+
+.dashboard__period {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    padding: .2rem;
+}
+
+.dashboard__period-button {
+    height: calc(var(--button-height) + 9px);
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .75rem;
+    outline: none !important;
+    border: none !important;
+    border-radius: inherit !important;
+    cursor: pointer;
+    color: var(--light-gray-color);
+    transition: var(--transition-duration);
+    background: transparent;
+}
+
+.dashboard__period-button:focus {
+    color: var(--purple-color);
+    font-weight: 600;
+    transition: var(--transition-duration);
+    background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25)) !important;
 }
