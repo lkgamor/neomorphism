@@ -107,7 +107,8 @@ main {
 }
 
 .neo__inset,
-.watchlist__checkbox {
+.watchlist__checkbox,
+.spending-balance__progress::before {
     border: none !important;
     background: var(--background-light)!important;
     box-shadow: 
@@ -120,8 +121,10 @@ main {
 .neo__outset,
 .watchlist__checkbox::before,
 .dashboard__period-button:hover,
-.dashboard__period-button:focus {
+.dashboard__period-button:focus,
+.spending-balance__progress::after {
     border: none !important;
+    
     background: var(--background-light)!important; 
     box-shadow: 
         -7px -7px 15px var(--neo-shadow-light),
@@ -184,13 +187,14 @@ main {
         inset 2px 0px 8px 4px var(--neo-shadow-inset-light) !important;
 }
 
-.watchlist__header,
-.watchlist__body {
+.watchlist__body,
+.watchlist__header {
     padding: 0 2rem;
 }
 
 .watchlist__header,
-.watchlist__body-title {
+.watchlist__body-title,
+.dashboard__bottom--right-title {
     display: flex;
     justify-content: space-between;
 }
@@ -368,22 +372,40 @@ main {
 
 .dashboard__body {
     display: grid;
-    grid-template-rows: calc(var(--button-height) * 2) calc(var(--button-height) * 8) auto;
+    grid-template-rows: calc(var(--button-height) * 2) calc(var(--button-height) * 6) auto;
+    height: 80%;
 }
 
 .dashboard__top {
     display: flex;
-    margin-top: 9%;
     align-items: center;
     justify-content: space-between;
 }
 
 .dashboard__middle {
-    
+    display: flex;
+    align-items: center;
+}
+
+.dashboard__graph {
+    border-radius: 1rem;
+    height: 80%;
+    width: 100%;
+    margin: auto;
 }
 
 .dashboard__bottom {
-    
+    display: flex;
+    padding: 1rem 0;
+}
+
+.dashboard__bottom--left {
+    flex: 1;
+    position: relative;
+}
+
+.dashboard__bottom--right {
+    flex: 2;
 }
 
 .dashboard__top--left {
@@ -431,4 +453,52 @@ main {
     font-weight: 600;
     transition: var(--transition-duration);
     background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25)) !important;
+}
+
+.spending-balance__progress {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 10rem;
+    margin: auto;
+    height: 10rem;
+    background: var(--light-gray-color);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.spending-balance__progress::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 9.5rem;
+    margin: auto;
+    height: 9.5rem;
+    background: var(--background-light);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.spending-balance__progress::after {
+    content: "$950";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 8.5rem;
+    margin: auto;
+    height: 8.5rem;
+    color: var(--purple-color);
+    background: var(--purple-color);
+    border: .5rem solid yellow;
+    border-radius: 50%;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
 }
