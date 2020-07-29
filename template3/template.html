@@ -14,7 +14,7 @@
         <section>
             <aside class="aside--left">
                 <div class="logo">
-                    <button class="neo__button logo__button bg--purple"></button>
+                    <button class="neo__button bg--purple" id="logo__button"></button>
                 </div>
                 <div class="nav-items">
                     <button class="btn neo__outset neo__button">
@@ -73,8 +73,13 @@
                         <div class="dashboard__bottom">
                             <div class="dashboard__bottom--left">
                                 <h6 class="text--purple">Spending balance</h6>
-                                <div class="spending-balance__progress neo__inset">
-                                    <div class="spending-balance__progress--inner neo__inset">$950</div>
+                                <div class="spending-balance__progress--outer">
+                                    <div class="spending-balance__progress--middle">
+                                        <div class="spending-balance__progress--inner neo__inset">
+                                            <h3 class="text--purple font-weight-bold">$950</h3>
+                                            <span class="text--lightgray">Buying Power</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="dashboard__bottom--right">
