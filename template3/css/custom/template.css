@@ -18,12 +18,12 @@
 
 
     /*GENERAL COLORS*/
-    --purple-color: rgb(42, 33, 94);
+    --purple-color: #2a215e;
     --pink-color: rgb(226, 79, 170);
     --light-color: #b8aeae;
     --light-gray-color: #807d7d;
 
-    --button-height: 30px;
+    --button-height: 28px;
     --spending-progress-size: 10rem;
     --menu-card-size: 110px;
     --transition-duration: 400ms;
@@ -78,7 +78,7 @@ section {
     padding-top: 3rem;
     padding-bottom: 2rem;
     margin: 2rem 2rem 2rem auto;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 main {
@@ -251,7 +251,7 @@ main {
     height: calc(var(--button-height) * 2);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    border-radius: 1rem;
+    border-radius: .5rem;
     box-shadow: 
         -7px -7px 15px var(--neo-shadow-light),
         7px 7px 15px var(--neo-shadow-inset-light);
@@ -259,7 +259,7 @@ main {
 }
 
 .watchlist__card + .watchlist__card {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .watchlist__logo {
@@ -334,7 +334,7 @@ main {
     font-weight: bold;
     content: "ON";
     left: unset;
-    right: 0;
+    transform: translateX(100%);
 }
 
 .user__card {
@@ -462,9 +462,9 @@ main {
 }
 
 .spending-balance__progress--outer {
-    width: var(--spending-progress-size);
-    height: var(--spending-progress-size);
-    margin: auto;
+    width: calc(var(--spending-progress-size) - 1rem);
+    height: calc(var(--spending-progress-size) - 1rem);
+    margin: 2rem auto auto;
     border-radius: 50%;
     border: 8px solid lightgray!important;
     display: flex;
@@ -512,4 +512,34 @@ main {
 
 .spending-balance__progress--inner span {
     font-size: small;
+}
+
+.dashboard__bottom--right-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.dashboard__bottom-card-container {
+    width: 50%;
+    height: calc(var(--spending-progress-size) - 1rem);
+}
+
+.dashboard__bottom-card-container + .dashboard__bottom-card-container {
+    margin-left: 2rem;
+}
+
+.dashboard__bottom-card {
+    width: 100%;
+    height: inherit;
+    border-radius: 1rem;
+    background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25)) !important;
+}
+
+.card__status {
+    font-size: .8rem;
+    text-align: right;
+    display: block;
+    margin-top: .4rem;
 }

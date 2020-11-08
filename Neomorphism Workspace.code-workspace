@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "template2"
+		},
+		{
+			"path": "template1"
+		},
+		{
+			"path": "template3"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "template3"
+	}
+}

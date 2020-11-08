@@ -1,0 +1,27 @@
+/**
+* @author Louis K. Gamor
+*/
+$backgroundColor: #dfdfea;
+$primaryColor: #2a215e;
+$secondaryColor: #b8aeae;
+$accentColor: rgb(206, 84, 3);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: $backgroundColor;
+    @include flexCenter();
+}
