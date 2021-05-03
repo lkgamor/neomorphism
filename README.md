@@ -1,2 +1,2 @@
 # neomorphism
-Sample HTML5/CSS3 neomorphism designs from random onlne templates
+Sample neomorphism designs from random onlne templates using  HTML5 and SASS.
